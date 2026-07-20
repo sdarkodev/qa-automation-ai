@@ -1,0 +1,23 @@
+{
+  "name": "qa-automation-ai",
+  "version": "1.0.0",
+  "description": "Playwright/TypeScript test automation suite with GitHub Actions CI/CD and AI-assisted testing workflows.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdarkodev/qa-automation-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sdarkodev/qa-automation-ai/issues"
+  },
+  "homepage": "https://github.com/sdarkodev/qa-automation-ai#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1"
+  }
+}
