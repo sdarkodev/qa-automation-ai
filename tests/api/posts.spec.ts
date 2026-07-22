@@ -30,12 +30,10 @@ test('POST creates a new post', { tag: ['@smoke', '@regression'] }, async ({ req
 test('GET non-existent post returns 404', { tag: ['@smoke', '@regression'] }, async ({ request }) => {
   const res = await request.get(`${BASE_URL}/posts/99999`);
   expect(res.status()).toBe(404);
-
+});
 
 test('post response matches schema', { tag: ['@smoke', '@regression'] }, async ({ request }) => {
   const res = await request.get(`${BASE_URL}/posts/1`);
   const body = await res.json();
   expect(() => PostSchema.parse(body)).not.toThrow();
-});
-
 });
