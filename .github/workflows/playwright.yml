@@ -24,14 +24,11 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
-        run: npx playwright test
-
       - name: Run Playwright @smoke tests on commits
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx playwright test --grep @smoke
 
-      - name: Run Playwright @regression tests on commits
+      - name: Run Playwright @regression tests on merges to main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx playwright test --grep @regression
 
