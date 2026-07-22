@@ -27,13 +27,13 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
 
-      - name: Run Playwright Smoke on Commit
-        if: github.event_name == 'push' 
-        run: npx playwright @smoke
-
-      - name: Run Playwright Regression on Push to Main
+      - name: Run Playwright @smoke tests on commits
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: npx playwright @regression
+        run: npx playwright test --grep @smoke
+
+      - name: Run Playwright @regression tests on commits
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npx playwright test --grep @regression
 
       - name: Upload test report
         uses: actions/upload-artifact@v4
