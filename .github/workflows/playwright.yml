@@ -25,11 +25,11 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright @smoke tests on commits
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' 
         run: npx playwright test --grep @smoke
 
       - name: Run Playwright @regression tests on merges to main
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'pull_request'
         run: npx playwright test --grep @regression
 
       - name: Upload test report
